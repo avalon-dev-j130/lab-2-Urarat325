@@ -73,8 +73,8 @@ public class Main {
     private static Properties getProperties() {
 
         Properties config = new Properties();
-        config.setProperty("login", "login");
-        config.setProperty("pass", "pass");
+        config.setProperty("login", "app");
+        config.setProperty("pass", "app");
         return config;
     }
     /**
