@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
+import java.util.Objects;
 
 /**
  * Класс описывает представление о коде товара и отражает соответствующую 
@@ -43,11 +44,10 @@ public class ProductCode {
      * @param set {@link ResultSet}, полученный в результате запроса, 
      * содержащего все поля таблицы PRODUCT_CODE базы данных Sample.
      */
-    private ProductCode(ResultSet set) {
-        /*
-         * TODO #05 реализуйте конструктор класса ProductCode
-         */
-        throw new UnsupportedOperationException("Not implemented yet!");        
+    private ProductCode(ResultSet set) throws SQLException {
+        
+        this(set.getString("PROD_CODE"), set.getString("DISCOUNT_CODE").charAt(0),
+             set.getString("DESCRIPTION"));
     }
     /**
      * Возвращает код товара
@@ -105,10 +105,11 @@ public class ProductCode {
      */
     @Override
     public int hashCode() {
+        
+        return Objects.hash(code,discountCode,description);
         /*
          * TODO #06 Реализуйте метод hashCode
          */
-        throw new UnsupportedOperationException("Not implemented yet!");
     }
     /**
      * Сравнивает некоторый произвольный объект с текущим объектом типа 
@@ -120,6 +121,8 @@ public class ProductCode {
      */
     @Override
     public boolean equals(Object obj) {
+        
+        if(this == obj)
         /*
          * TODO #07 Реализуйте метод equals
          */
@@ -203,6 +206,8 @@ public class ProductCode {
         /*
          * TODO #13 Реализуйте метод convert
          */
+        
+        
         throw new UnsupportedOperationException("Not implemented yet!");
     }
     /**
