@@ -190,6 +190,7 @@ public class ProductCode {
          * TODO #10 Реализуйте метод getInsertQuery
          */
     }
+
     /**
      * Возвращает запрос на обновление значений записи в таблице PRODUCT_CODE
      * базы данных Sample
